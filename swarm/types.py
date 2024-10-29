@@ -13,10 +13,10 @@ AgentFunction = Callable[[], Union[str, "Agent", dict]]
 
 class Agent(BaseModel):
     name: str = "Agent"
-    model: str = "gpt-4o"
+    model: str = "qwen2.5-coder:7b"
     instructions: Union[str, Callable[[], str]] = "You are a helpful agent."
     functions: List[AgentFunction] = []
-    tool_choice: str = None
+    tool_choice: str = "auto"
     parallel_tool_calls: bool = True
 
 
