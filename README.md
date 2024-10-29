@@ -2,6 +2,8 @@
 
 # Swarm (experimental, educational)
 
+### This fork of OpenAI makes it possible to use local LLMs for your swarms with Ollama!
+
 An educational framework exploring ergonomic, lightweight multi-agent orchestration.
 
 > [!WARNING]
@@ -14,13 +16,13 @@ An educational framework exploring ergonomic, lightweight multi-agent orchestrat
 Requires Python 3.10+
 
 ```shell
-pip install git+ssh://git@github.com/openai/swarm.git
+pip install git+ssh://git@github.com/coleam00/ollama-swarm.git
 ```
 
 or
 
 ```shell
-pip install git+https://github.com/openai/swarm.git
+pip install git+https://github.com/coleam00/ollama-swarm.git
 ```
 
 ## Usage
@@ -38,11 +40,13 @@ agent_a = Agent(
     name="Agent A",
     instructions="You are a helpful agent.",
     functions=[transfer_to_agent_b],
+    model="Ollama model ID here"
 )
 
 agent_b = Agent(
     name="Agent B",
     instructions="Only speak in Haikus.",
+    model="Ollama model ID here"
 )
 
 response = client.run(
